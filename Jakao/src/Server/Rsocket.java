@@ -31,7 +31,7 @@ public void send(String str) {
 	}
 }
 
-public String recive() {
+public String receive() {
 	try {
 		return br.readLine();
 	} catch (IOException e) {
