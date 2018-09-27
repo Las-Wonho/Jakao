@@ -14,7 +14,7 @@ public class ChatServer {
     }
 
     void new_people(User people) {
-        if (people != null){
+        if (people != null) {
             peoples.add(people);
         }
     }
@@ -29,16 +29,17 @@ public class ChatServer {
             peoples.parallelStream()
                     .filter(x -> x != null)
                     .filter(x -> x.id != sender.id)
-                    .forEach(x -> x.Send(message, this, sender.name));
+                    .forEach(x -> x.Send(message, sender.name));
     }
+
     @Override
-    public String toString(){
+    public String toString() {
 
         int count = peoples.size();
         String result = "";
-        for (User i: peoples) {
+        for (User i : peoples) {
             result += i.name + " : " + i.id + "\r\n";
         }
-        return String.format("Server id is %s \r\n Server poeple count is %d \r\n::::Users info::::\r\n%s",id,count,result);
+        return String.format("Server id is %s \r\n Server poeple count is %d \r\n::::Users info::::\r\n%s", id, count, result);
     }
 }

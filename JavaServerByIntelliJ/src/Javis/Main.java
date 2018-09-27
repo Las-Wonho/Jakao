@@ -12,7 +12,7 @@ public class Main {
         server.new_server();
 
         System.out.println("Program Start");
-        while(true){
+        while (true) {
 
             User user = server.new_user();
             server.Chats.get(0).new_people(user);

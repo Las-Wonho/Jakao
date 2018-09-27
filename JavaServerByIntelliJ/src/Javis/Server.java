@@ -8,6 +8,7 @@ public class Server {
     ServerSocket server;
     ArrayList<ChatServer> Chats;
     int server_number;
+
     Server() {
         server_number = 0;
         Chats = new ArrayList<ChatServer>();
@@ -42,9 +43,10 @@ public class Server {
         }
         return null;
     }
-    void new_server(){
-        server_number+=1;
-        Chats.add(new ChatServer(""+(server_number), this));
+
+    void new_server() {
+        server_number += 1;
+        Chats.add(new ChatServer("" + (server_number), this));
     }
 
 }
